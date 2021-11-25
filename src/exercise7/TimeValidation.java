@@ -12,19 +12,33 @@ public class TimeValidation {
         System.out.print("Enter minutes: ");
         int minutes = input.nextInt();
 
-        boolean timeValid = false; // Call validation methods
+        boolean timeValid; // Call validation methods
+        timeValid = areHoursValid(hours) && areMinutesValid(minutes);
+
         System.out.println("Time valid: " + timeValid);
     }
 
 
     public static boolean areHoursValid(int hours) {
-        // Implement method
-        return false;
+
+        boolean flag = true;
+
+        if (hours < 0 || hours > 23) {
+            flag = false;
+        }
+
+        return flag;
     }
 
 
     public static boolean areMinutesValid(int minutes) {
-        // Implement method
-        return false;
+
+        boolean flag = true;
+
+        if (minutes < 0 || minutes > 59) {
+            flag = false;
+        }
+
+        return flag;
     }
 }
